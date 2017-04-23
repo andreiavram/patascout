@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block page_header %}
+    Song List
+{% endblock %}
+
+{% block content %}
+    <ul>
+        {% for object in object_list %}
+            <li><a href = "{% url "songs:song_detail" slug=object.slug %}">{{ object }}</a></li>
+        {% empty %}
+            <li><em>No songs!</em></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block page_header %}
+    Song: {{ object }}
+{% endblock %}
+
+{% block content %}
+    {{ object.title }}
+    {{ object.file_path }}
+
+    <p><a href = "{% url "songs:song_code_edit" slug=object.slug %}">Edit song code</a></p>
+    <p><a href = "{% url "songs:song_list" %}">List</a></p>
+{% endblock %}
